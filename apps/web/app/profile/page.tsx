@@ -17,6 +17,7 @@ import {
   Building,
   Fingerprint,
   BellRing,
+  FileBadge2,
 } from "lucide-react";
 import { truncateAddress } from "@/lib/format";
 
