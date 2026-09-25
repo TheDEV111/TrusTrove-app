@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { useRecentEvents } from "./useEvents";
 import { useInvoices } from "./useInvoices";
 import { useWalletStore } from "@/store/wallet";
-import { NotificationEvent, mapEventToNotification } from "@/types/notifications";
+import {
+  NotificationEvent,
+  mapEventToNotification,
+} from "@/types/notifications";
 
 export function useNotifications() {
   const { address, role } = useWalletStore();
@@ -87,7 +90,7 @@ export function useNotifications() {
 
   const markAllAsRead = () => {
     if (!address) return;
-    
+
     setNotifications((prev) => prev.map((n) => ({ ...n, read: true })));
 
     const storageKey = `trusttrove_notifs_${address}`;
@@ -95,7 +98,7 @@ export function useNotifications() {
       const stored = localStorage.getItem(storageKey);
       if (stored) {
         const allSaved: NotificationEvent[] = JSON.parse(stored);
-        const updated = allSaved.map(n => ({ ...n, read: true }));
+        const updated = allSaved.map((n) => ({ ...n, read: true }));
         localStorage.setItem(storageKey, JSON.stringify(updated));
       }
     } catch (err) {}

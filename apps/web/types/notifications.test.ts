@@ -53,7 +53,7 @@ describe("mapEventToNotification", () => {
     expect(notif.type).toBe("UnknownEvent");
     expect(notif.message).toBe("INV#inv1...");
   });
-  
+
   it("maps empty invoice id correctly", () => {
     const notif = mapEventToNotification({
       ...baseEvent,

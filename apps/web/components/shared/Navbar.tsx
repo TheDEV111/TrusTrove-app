@@ -171,7 +171,10 @@ export function Navbar() {
             )}
 
             <div className="hidden sm:flex items-center gap-2">
-              <NotificationBell notifications={notifications} onOpen={markAllAsRead} />
+              <NotificationBell
+                notifications={notifications}
+                onOpen={markAllAsRead}
+              />
               <ThemeToggle />
             </div>
 
@@ -229,7 +232,10 @@ export function Navbar() {
           </div>
 
           <div className="mt-4 sm:hidden flex items-center justify-between gap-4">
-            <NotificationBell notifications={notifications} onOpen={markAllAsRead} />
+            <NotificationBell
+              notifications={notifications}
+              onOpen={markAllAsRead}
+            />
             <WalletConnect />
           </div>
         </div>

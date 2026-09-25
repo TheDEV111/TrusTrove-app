@@ -25,7 +25,7 @@ describe("NotificationBell", () => {
     ];
 
     render(<NotificationBell notifications={mockNotifs} />);
-    
+
     // Open dropdown
     const button = screen.getByRole("button", { name: /notifications/i });
     fireEvent.click(button);
@@ -40,10 +40,10 @@ describe("NotificationBell", () => {
   it("calls onOpen when opened", () => {
     const onOpen = vi.fn();
     render(<NotificationBell notifications={[]} onOpen={onOpen} />);
-    
+
     const button = screen.getByRole("button", { name: /notifications/i });
     fireEvent.click(button);
-    
+
     expect(onOpen).toHaveBeenCalledTimes(1);
   });
 });
